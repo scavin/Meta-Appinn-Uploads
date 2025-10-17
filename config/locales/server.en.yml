@@ -7,5 +7,7 @@ en:
     appinn_upload_server_compress: "Enable server-side compression"
     appinn_upload_name_type: "Upload filename strategy"
     appinn_upload_auto_retry: "Auto retry with fallback channel"
+    appinn_upload_return_format: "Upload response format"
+    appinn_upload_folder: "Upload folder path (optional)"
     appinn_upload_max_file_size_mb: "Maximum upload file size (MB)"
     appinn_upload_debug: "Enable Appinn upload debug logging"

@@ -11,6 +11,52 @@ plugins:
   appinn_upload_api_token:
     default: ""
     client: true
+  appinn_upload_channel:
+    type: enum
+    default: ""
+    choices:
+      - ""
+      - telegram
+      - cfr2
+      - s3
+    client: true
+  appinn_upload_server_compress:
+    type: enum
+    default: ""
+    choices:
+      - ""
+      - true
+      - false
+    client: true
+  appinn_upload_name_type:
+    type: enum
+    default: ""
+    choices:
+      - ""
+      - default
+      - index
+      - origin
+      - short
+    client: true
+  appinn_upload_auto_retry:
+    type: enum
+    default: ""
+    choices:
+      - ""
+      - true
+      - false
+    client: true
+  appinn_upload_return_format:
+    type: enum
+    default: ""
+    choices:
+      - ""
+      - default
+      - full
+    client: true
+  appinn_upload_folder:
+    default: ""
+    client: true
   appinn_upload_max_file_size_mb:
     default: 20
     type: integer

@@ -7,5 +7,7 @@ zh_CN:
     appinn_upload_server_compress: "启用服务器端压缩"
     appinn_upload_name_type: "Appinn 文件命名策略"
     appinn_upload_auto_retry: "上传失败时自动切换渠道"
+    appinn_upload_return_format: "返回链接格式"
+    appinn_upload_folder: "上传子目录路径（可选）"
     appinn_upload_max_file_size_mb: "最大上传文件大小（MB）"
     appinn_upload_debug: "启用 Appinn 上传调试日志"
