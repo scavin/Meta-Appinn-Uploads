@@ -43,10 +43,10 @@ function buildConfig(siteSettings) {
     uploadParams: {
       authCode: siteSettings.appinn_upload_auth_code,
       serverCompress: siteSettings.appinn_upload_server_compress,
-      uploadChannel: siteSettings.appinn_upload_channel || 'telegram',
-      uploadNameType: siteSettings.appinn_upload_name_type || 'default',
+      uploadChannel: siteSettings.appinn_upload_channel,
+      uploadNameType: siteSettings.appinn_upload_name_type,
       autoRetry: siteSettings.appinn_upload_auto_retry,
-      returnFormat: siteSettings.appinn_upload_return_format || 'default',
+      returnFormat: siteSettings.appinn_upload_return_format,
       uploadFolder: siteSettings.appinn_upload_folder,
     },
     apiToken: siteSettings.appinn_upload_api_token,
@@ -611,14 +611,20 @@ class UploadController {
 
     const params = new URLSearchParams();
     Object.entries(this.config.uploadParams).forEach(([key, value]) => {
+      if (value === undefined || value === null || value === '') {
+        return;
+      }
       if (typeof value === 'boolean') {
         params.set(key, value ? 'true' : 'false');
-      } else if (value !== undefined && value !== null && value !== '') {
+      } else {
         params.set(key, value);
       }
     });
 
-    const uploadUrl = `${this.config.uploadEndpoint}?${params.toString()}`;
+    const search = params.toString();
+    const uploadUrl = search
+      ? `${this.config.uploadEndpoint}?${search}`
+      : this.config.uploadEndpoint;
 
     const headers = {};
     if (this.config.apiToken) {

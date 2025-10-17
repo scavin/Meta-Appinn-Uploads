@@ -32,11 +32,11 @@ All behaviour is controlled through standard site settings; no code changes are 
 | `appinn_upload_assets_prefix` | Prefix prepended to `src` values returned by the endpoint. | `https://h1.appinn.me` |
 | `appinn_upload_auth_code` | Required auth code for uploads. | _empty_ |
 | `appinn_upload_api_token` | Optional API Token; if set, sent as `Authorization: Bearer …`. | _empty_ |
-| `appinn_upload_channel` | Upload channel (`telegram`, `cfr2`, `s3`). | `telegram` |
-| `appinn_upload_server_compress` | Enable server-side compression. | `false` |
-| `appinn_upload_name_type` | Filename strategy (`default`, `index`, `origin`, `short`). | `default` |
-| `appinn_upload_auto_retry` | Allow the server to auto-retry on failures. | `true` |
-| `appinn_upload_return_format` | Response format (`default` for `/file/id`, `full` for absolute URLs). | `default` |
+| `appinn_upload_channel` | Upload channel override (`telegram`, `cfr2`, `s3`). Leave blank to use service default. | _empty_ |
+| `appinn_upload_server_compress` | Override server-side compression behaviour. Leave blank to use service default. | _empty_ |
+| `appinn_upload_name_type` | Override filename strategy (`default`, `index`, `origin`, `short`). | _empty_ |
+| `appinn_upload_auto_retry` | Override auto-retry toggle. | _empty_ |
+| `appinn_upload_return_format` | Override response format (`default`/`full`). | _empty_ |
 | `appinn_upload_folder` | Optional subfolder path (e.g. `img/test`). | _empty_ |
 | `appinn_upload_max_file_size_mb` | Maximum allowed file size in megabytes. | `20` |
 | `appinn_upload_debug` | Enable console logging for debugging. | `false` |
