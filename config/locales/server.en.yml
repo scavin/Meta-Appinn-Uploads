@@ -1,0 +1,11 @@
+en:
+  site_settings:
+    appinn_upload_endpoint: "Appinn upload endpoint"
+    appinn_upload_assets_prefix: "Appinn assets URL prefix"
+    appinn_upload_auth_code: "Appinn upload authentication code"
+    appinn_upload_channel: "Appinn upload channel"
+    appinn_upload_server_compress: "Enable server-side compression"
+    appinn_upload_name_type: "Upload filename strategy"
+    appinn_upload_auto_retry: "Auto retry with fallback channel"
+    appinn_upload_max_file_size_mb: "Maximum upload file size (MB)"
+    appinn_upload_debug: "Enable Appinn upload debug logging"

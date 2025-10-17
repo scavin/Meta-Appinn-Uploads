@@ -1,0 +1,56 @@
+plugins:
+  appinn_upload_endpoint:
+    default: "https://h1.appinn.me/upload"
+    client: true
+  appinn_upload_assets_prefix:
+    default: "https://h1.appinn.me"
+    client: true
+  appinn_upload_auth_code:
+    default: ""
+    client: true
+  appinn_upload_api_token:
+    default: ""
+    client: true
+  appinn_upload_channel:
+    type: enum
+    default: "telegram"
+    choices:
+      - telegram
+      - cfr2
+      - s3
+    client: true
+  appinn_upload_server_compress:
+    default: false
+    type: bool
+    client: true
+  appinn_upload_name_type:
+    type: enum
+    default: "default"
+    choices:
+      - default
+      - index
+      - origin
+      - short
+    client: true
+  appinn_upload_auto_retry:
+    default: true
+    type: bool
+    client: true
+  appinn_upload_return_format:
+    type: enum
+    default: "default"
+    choices:
+      - default
+      - full
+    client: true
+  appinn_upload_folder:
+    default: ""
+    client: true
+  appinn_upload_max_file_size_mb:
+    default: 20
+    type: integer
+    client: true
+  appinn_upload_debug:
+    default: false
+    type: bool
+    client: true
