@@ -1,5 +1,5 @@
-Appinn Uploads (Discourse Plugin)
-=================================
+Meta Appinn Uploads (Discourse Plugin)
+======================================
 
 This plugin replaces Discourse’s built-in upload flow and routes every file paste, drag/drop, or toolbar upload button action to the Appinn image hosting service (`h1.appinn.me`). It keeps the original userscript behaviour— inserting Markdown placeholders during upload, replacing them with the final resource URLs, and showing failure messages on error— while integrating directly into the Discourse composer (both the classic Markdown textarea and the new rich-text composer). The result works consistently on desktop and mobile without depending on a browser userscript.
 
@@ -14,7 +14,7 @@ Key Features
 
 Installation
 ------------
-1. Place this repository inside your Discourse installation’s `plugins/` directory (e.g. `/var/discourse/shared/standalone/plugins/appinn-uploads`).
+1. Place this repository inside your Discourse installation’s `plugins/` directory (e.g. `/var/discourse/shared/standalone/plugins/appinn-uploads-meta`).
 2. Rebuild the Discourse container:
    ```bash
    ./launcher rebuild app
@@ -45,7 +45,7 @@ Once the relevant settings are populated (provide at least an auth code or API t
 
 Migration From the Userscript
 -----------------------------
-If community members previously installed the “Appinn Uploads” userscript, remind them to disable or remove it after the plugin is deployed. The plugin sets `document.body.dataset.appinnUploader = "plugin"` so the latest userscript can detect the plugin and exit early, but removing the userscript avoids duplicate uploads on older copies.
+If community members previously installed the “Meta Appinn Uploads” userscript, remind them to disable or remove it after the plugin is deployed. The plugin sets `document.body.dataset.appinnUploader = "plugin"` so the latest userscript can detect the plugin and exit early, but removing the userscript avoids duplicate uploads on older copies.
 
 Troubleshooting
 ---------------

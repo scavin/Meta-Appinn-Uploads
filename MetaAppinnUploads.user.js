@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Appinn Uploads
+// @name         Meta Appinn Uploads
 // @name:zh-CN   小众软件论坛上传优化
 // @license      AGPL-3.0
 // @version      0.5.0
