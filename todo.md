@@ -1,5 +1,5 @@
-Appinn Forum Upload Enhancer Plugin TODO
-========================================
+Appinn Uploads Plugin TODO
+==========================
 
 - [x] Confirm site settings to expose (auth code, upload channel, server compress, name type, auto retry, debug).
 - [x] Scaffold plugin structure:
