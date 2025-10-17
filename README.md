@@ -14,7 +14,7 @@ Key Features
 
 Installation
 ------------
-1. Place this repository inside your Discourse installation’s `plugins/` directory (e.g. `/var/discourse/shared/standalone/plugins/appinn-uploads-meta`).
+1. Place this repository inside your Discourse installation’s `plugins/` directory (e.g. `/var/discourse/shared/standalone/plugins/meta-appinn-uploads`).
 2. Rebuild the Discourse container:
    ```bash
    ./launcher rebuild app
