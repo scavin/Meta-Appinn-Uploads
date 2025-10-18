@@ -6,6 +6,16 @@ const SELECTORS = {
   proseMirror: '.ProseMirror-container .ProseMirror.d-editor-input',
 };
 
+const UPLOAD_TRIGGER_SELECTORS = [
+  'button.toolbar__button.upload',
+  'button.toolbar-popup-menu__button.upload',
+  'button.toolbar-popup-menu__button[data-value="upload"]',
+  '[data-action="upload"]',
+  '[data-value="upload"]',
+];
+
+const UPLOAD_TRIGGER_QUERY = UPLOAD_TRIGGER_SELECTORS.join(',');
+
 const CONTENT_FORMAT = {
   before: '\n',
   after: '\n\n',
@@ -474,6 +484,27 @@ class UploadController {
       this.addListener(context.uploadButton, 'click', uploadButtonHandler, true);
       context.uploadButton.style.display = 'inline-flex';
     }
+
+    const delegatedUploadHandler = (event) => {
+      const trigger = event.target.closest(UPLOAD_TRIGGER_QUERY);
+      if (!trigger) {
+        return;
+      }
+      if (event.type === 'click' && event.button !== 0) {
+        return;
+      }
+      if (!adapter?.isUsable()) {
+        return;
+      }
+      event.preventDefault();
+      event.stopPropagation();
+      if (event.stopImmediatePropagation) {
+        event.stopImmediatePropagation();
+      }
+      this.openFilePicker(adapter);
+    };
+
+    this.addListener(document, 'click', delegatedUploadHandler, true);
   }
 
   addListener(target, type, handler, options) {
@@ -518,7 +549,10 @@ class UploadController {
     if (event.stopImmediatePropagation) {
       event.stopImmediatePropagation();
     }
+    this.openFilePicker(adapter);
+  }
 
+  openFilePicker(adapter) {
     const input = document.createElement('input');
     input.type = 'file';
     input.multiple = true;
